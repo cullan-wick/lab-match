@@ -141,6 +141,7 @@ export const initialApplications = [
     studentId: 'student1',
     professorId: 'prof1',
     message: 'Hi Dr. Chen, I am very interested in your work on NLP and would love to contribute to your lab. I have completed CS 760 and worked on clinical NLP as a RA. I believe my background aligns well with your current projects.',
+    status: 'under_review',
     timestamp: '2026-03-10T14:30:00Z',
     studentSnapshot: {
       name: 'Alex Johnson',
@@ -158,5 +159,52 @@ export const initialApplications = [
         { title: 'Research Assistant', lab: 'UW Data Science Lab', duration: 'Jan 2024 - Present', description: 'Worked on NLP pipeline for clinical text analysis.' }
       ],
     }
-  }
+  },
+  {
+    id: 'app2',
+    studentId: 'student2',
+    professorId: 'prof1',
+    message: 'Dear Dr. Chen, I recently read your paper on computer vision for medical imaging and it sparked my interest in joining your lab. As a senior in Biology with strong stats coursework, I am eager to apply ML techniques to biological datasets.',
+    status: 'under_review',
+    timestamp: '2026-03-15T09:10:00Z',
+    studentSnapshot: {
+      name: 'Maya Patel',
+      email: 'student2@wisc.edu',
+      year: 'Senior',
+      major: 'Biology',
+      gpa: '3.92',
+      bio: 'Interested in the intersection of biology and machine learning. Seeking research experience before graduate school.',
+      classes: [
+        { name: 'BIOCHEM 501 - Biochemistry', grade: 'A' },
+        { name: 'GENETICS 467 - Genetics', grade: 'A' },
+        { name: 'STAT 333 - Applied Regression', grade: 'A-' },
+      ],
+      researchExperience: [],
+    }
+  },
+  {
+    id: 'app3',
+    studentId: 'student3',
+    professorId: 'prof1',
+    message: 'Hello Dr. Chen, I am a sophomore double majoring in CS and Math and have been building deep learning projects independently for the past year. I would love the chance to work on your reinforcement learning projects and contribute to the lab over the summer.',
+    status: 'under_review',
+    timestamp: '2026-03-18T16:45:00Z',
+    studentSnapshot: {
+      name: 'Daniel Lee',
+      email: 'dlee@wisc.edu',
+      year: 'Sophomore',
+      major: 'Computer Science & Mathematics',
+      gpa: '3.78',
+      bio: 'Self-taught deep learning enthusiast. Built several personal projects in reinforcement learning and generative models.',
+      classes: [
+        { name: 'CS 540 - Intro to AI', grade: 'A' },
+        { name: 'MATH 521 - Analysis', grade: 'A-' },
+        { name: 'CS 537 - Operating Systems', grade: 'B+' },
+        { name: 'MATH 341 - Linear Algebra', grade: 'A' },
+      ],
+      researchExperience: [
+        { title: 'Independent Study', lab: 'Self-directed', duration: 'Summer 2025', description: 'Implemented PPO and SAC algorithms from scratch, trained agents on MuJoCo environments.' }
+      ],
+    }
+  },
 ];

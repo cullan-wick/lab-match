@@ -1,57 +1,14 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { initialProfessors, initialStudents, initialApplications } from '../data/mockData';
 
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(() => {
-    const saved = localStorage.getItem('uw_current_user');
-    return saved ? JSON.parse(saved) : null;
-  });
-
-  const [professors, setProfessors] = useState(() => {
-    const saved = localStorage.getItem('uw_professors');
-    return saved ? JSON.parse(saved) : initialProfessors;
-  });
-
-  const [students, setStudents] = useState(() => {
-    const saved = localStorage.getItem('uw_students');
-    return saved ? JSON.parse(saved) : initialStudents;
-  });
-
-  const [applications, setApplications] = useState(() => {
-    const saved = localStorage.getItem('uw_applications');
-    return saved ? JSON.parse(saved) : initialApplications;
-  });
-
-  const [messages, setMessages] = useState(() => {
-    const saved = localStorage.getItem('uw_messages');
-    return saved ? JSON.parse(saved) : [];
-  });
-
-  useEffect(() => {
-    localStorage.setItem('uw_professors', JSON.stringify(professors));
-  }, [professors]);
-
-  useEffect(() => {
-    localStorage.setItem('uw_students', JSON.stringify(students));
-  }, [students]);
-
-  useEffect(() => {
-    localStorage.setItem('uw_applications', JSON.stringify(applications));
-  }, [applications]);
-
-  useEffect(() => {
-    localStorage.setItem('uw_messages', JSON.stringify(messages));
-  }, [messages]);
-
-  useEffect(() => {
-    if (currentUser) {
-      localStorage.setItem('uw_current_user', JSON.stringify(currentUser));
-    } else {
-      localStorage.removeItem('uw_current_user');
-    }
-  }, [currentUser]);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [professors, setProfessors] = useState(initialProfessors);
+  const [students, setStudents] = useState(initialStudents);
+  const [applications, setApplications] = useState(initialApplications);
+  const [messages, setMessages] = useState([]);
 
   const login = (email, password) => {
     const allUsers = [...professors, ...students];
